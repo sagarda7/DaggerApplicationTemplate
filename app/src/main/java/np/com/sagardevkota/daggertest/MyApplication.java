@@ -2,6 +2,8 @@ package np.com.sagardevkota.daggertest;
 
 import android.app.Application;
 
+import com.facebook.stetho.Stetho;
+
 import javax.inject.Inject;
 
 import np.com.sagardevkota.daggertest.dagger.Injector;
@@ -28,6 +30,7 @@ public class MyApplication extends Application {
         Injector.initializeApplicationComponent(this);
         Injector.getAppComponent().inject(this);
         database.setup();
+        Stetho.initializeWithDefaults(this);
     }
 
 
