@@ -7,6 +7,8 @@ This is clean template which uses Dagger 2 for dependency injection.
 * Retrofit and OKHttp Instances
 * SharedPreferences
 * Gson
+* Realm Database Helper 
+
 
 And you can add many more modules.
 
