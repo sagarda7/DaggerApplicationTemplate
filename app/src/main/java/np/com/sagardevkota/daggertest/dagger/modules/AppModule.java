@@ -1,6 +1,7 @@
 package np.com.sagardevkota.daggertest.dagger.modules;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -35,6 +36,12 @@ public class AppModule {
     // Application reference must come from AppModule.class
     SharedPreferences providesSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
+    }
+
+    @Provides
+    @Singleton
+    public Context applicationContext() {
+        return mApplication.getApplicationContext();
     }
 
 }

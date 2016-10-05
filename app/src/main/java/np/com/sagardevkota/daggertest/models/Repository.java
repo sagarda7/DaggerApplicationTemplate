@@ -1,10 +1,14 @@
 package np.com.sagardevkota.daggertest.models;
 
+import io.realm.RealmObject;
+import io.realm.annotations.Required;
+
 /**
  * Created by HP on 10/3/2016.
  */
-public class Repository {
+public class Repository extends RealmObject {
 
+    @Required
     String name;
     String fullName;
     String description;

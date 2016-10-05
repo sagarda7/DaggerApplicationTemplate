@@ -12,6 +12,8 @@ import np.com.sagardevkota.daggertest.R;
 import np.com.sagardevkota.daggertest.dagger.components.AppComponent;
 import np.com.sagardevkota.daggertest.models.Repository;
 import np.com.sagardevkota.daggertest.networking.ApiInterface;
+import np.com.sagardevkota.daggertest.realm.RealmDatabase;
+import np.com.sagardevkota.daggertest.realm.RealmRepository;
 import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,6 +30,9 @@ public class MainActivity extends BaseActivity {
 
     @Inject
     ApiInterface mApiInterface;
+
+    @Inject
+    RealmRepository realmRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +74,13 @@ public class MainActivity extends BaseActivity {
             Log.d("DEBUG",rep.getDescription()+" ");
         }
 
+        realmRepository.add(repo);
 
 
-
+        List<Repository> realmItems=realmRepository.all();
+        for(Repository rep: realmItems){
+            Log.d("DEBUG-REALM",rep.getDescription()+" ");
+        }
     }
 
     @Override
