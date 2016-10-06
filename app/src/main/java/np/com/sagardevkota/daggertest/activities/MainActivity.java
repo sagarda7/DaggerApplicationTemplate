@@ -13,6 +13,7 @@ import np.com.sagardevkota.daggertest.R;
 import np.com.sagardevkota.daggertest.dagger.components.AppComponent;
 import np.com.sagardevkota.daggertest.models.Repository;
 import np.com.sagardevkota.daggertest.networking.ApiInterface;
+import np.com.sagardevkota.daggertest.networking.ReactiveRequestHandler;
 import np.com.sagardevkota.daggertest.realm.RealmDatabase;
 import np.com.sagardevkota.daggertest.realm.RealmRepository;
 import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
@@ -20,6 +21,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.HttpException;
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity {
 
@@ -69,27 +77,23 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onButtonClicked(View v){
-        Call<ArrayList<Repository>> call = mApiInterface.getRepository("codepath");
 
-        call.enqueue(new Callback<ArrayList<Repository>>() {
+        // Network call using retrofit and rxJava
+        Observable<ArrayList<Repository>> call = mApiInterface.getRepository("codepath");
+
+        ReactiveRequestHandler.performAsync(call, new ReactiveRequestHandler.RetroReactiveCallback<ArrayList<Repository>>() {
             @Override
-            public void onResponse(Call<ArrayList<Repository>> call, Response<ArrayList<Repository>> response) {
-                if (response.isSuccessful()) {
-                    Log.i("DEBUG", response.body().toString());
-
-                } else {
-                    Log.i("ERROR", String.valueOf(response.code()));
-                }
-
+            public void onComplete(ArrayList<Repository> response) {
+                Log.d("DEBUG",response.size()+" items found");
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Repository>> call, Throwable t) {
-
+            public void onError(HttpException ex) {
+                Log.d("DEBUG",ex.code()+" "+ex.message());
             }
-
-
         });
+
+
     }
 
 
