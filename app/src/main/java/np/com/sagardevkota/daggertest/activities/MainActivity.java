@@ -10,6 +10,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import np.com.sagardevkota.daggertest.R;
+import np.com.sagardevkota.daggertest.dagger.components.ActivityComponent;
 import np.com.sagardevkota.daggertest.dagger.components.AppComponent;
 import np.com.sagardevkota.daggertest.models.Repository;
 import np.com.sagardevkota.daggertest.networking.ApiInterface;
@@ -72,7 +73,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void setupComponent(AppComponent component) {
+    protected void setupComponent(ActivityComponent component) {
         component.inject(this);
     }
 

@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
 import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 
 /**
@@ -21,7 +22,7 @@ public class DatabaseModule {
     }
 
     @Provides
-    @Singleton
+    @ActivityScope
     DBRepoHelper providesRepoDB() {
         return new DBRepoHelper(context);
     }

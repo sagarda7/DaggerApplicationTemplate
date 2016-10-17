@@ -9,7 +9,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import np.com.sagardevkota.daggertest.dagger.scopes.ApplicationScope;
 import np.com.sagardevkota.daggertest.dagger.scopes.UserScope;
+import np.com.sagardevkota.daggertest.realm.RealmDatabase;
 import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 
 /**
@@ -25,23 +27,30 @@ public class AppModule {
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     Application providesApplication() {
         return mApplication;
     }
 
     // Dagger will only look for methods annotated with @Provides
     @Provides
-    @Singleton
+    @ApplicationScope
     // Application reference must come from AppModule.class
     SharedPreferences providesSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     public Context applicationContext() {
         return mApplication.getApplicationContext();
+    }
+
+    //database instance exists throughout application scope so here
+    @Provides
+    @ApplicationScope
+    RealmDatabase providesRealmDatabase() {
+        return new RealmDatabase();
     }
 
 }

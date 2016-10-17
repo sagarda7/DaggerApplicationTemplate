@@ -13,6 +13,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -37,7 +38,7 @@ public class NetModule {
 
 
     @Provides
-    @Singleton
+    @ActivityScope
     Cache provideOkHttpCache() {
         int cacheSize = 10 * 1024 * 1024; // 10 MiB
         Cache cache = new Cache(mApplication.getCacheDir(), cacheSize);
@@ -45,7 +46,7 @@ public class NetModule {
     }
 
     @Provides
-    @Singleton
+    @ActivityScope
     Gson provideGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
@@ -53,7 +54,7 @@ public class NetModule {
     }
 
     @Provides
-    @Singleton
+    @ActivityScope
     OkHttpClient provideOkHttpClient(Cache cache) {
         OkHttpClient client = new OkHttpClient
                 .Builder().cache(cache)
@@ -64,7 +65,7 @@ public class NetModule {
     }
 
     @Provides
-    @Singleton
+    @ActivityScope
     Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))

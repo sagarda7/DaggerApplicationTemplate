@@ -29,8 +29,8 @@ public class MyApplication extends Application {
         super.onCreate();
         Injector.initializeApplicationComponent(this);
         Injector.getAppComponent().inject(this);
-        database.setup();
         Stetho.initializeWithDefaults(this);
+        database.setup();
     }
 
 

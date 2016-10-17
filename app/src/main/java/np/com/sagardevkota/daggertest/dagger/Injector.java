@@ -1,7 +1,11 @@
 package np.com.sagardevkota.daggertest.dagger;
 
+import android.app.Application;
+
 import np.com.sagardevkota.daggertest.MyApplication;
+import np.com.sagardevkota.daggertest.dagger.components.ActivityComponent;
 import np.com.sagardevkota.daggertest.dagger.components.AppComponent;
+import np.com.sagardevkota.daggertest.dagger.components.DaggerActivityComponent;
 import np.com.sagardevkota.daggertest.dagger.components.DaggerAppComponent;
 import np.com.sagardevkota.daggertest.dagger.modules.ApiModule;
 import np.com.sagardevkota.daggertest.dagger.modules.AppModule;
@@ -15,6 +19,9 @@ import np.com.sagardevkota.daggertest.dagger.modules.RealmModule;
 public class Injector {
 
     private static AppComponent mAppComponent;
+    private static ActivityComponent mActivityComponent;
+    private static MyApplication myApplication;
+
 
     private Injector() {}
 
@@ -22,6 +29,17 @@ public class Injector {
         mAppComponent = DaggerAppComponent.builder()
                 // list of modules that are part of this component need to be created here too
                 .appModule(new AppModule(application))
+                .build();
+    }
+
+    public static AppComponent getAppComponent() {
+        return mAppComponent;
+    }
+
+    public static void initializeActivityComponent(Application application) {
+        mActivityComponent = DaggerActivityComponent.builder()
+                // list of modules that are part of this component need to be created here too
+                .appComponent(mAppComponent)
                 .netModule(new NetModule(application,"https://api.github.com"))
                 .apiModule(new ApiModule())
                 .databaseModule(new DatabaseModule(application))
@@ -29,8 +47,12 @@ public class Injector {
                 .build();
     }
 
-    public static AppComponent getAppComponent() {
-        return mAppComponent;
+    public static ActivityComponent getActivityComponent() {
+        return mActivityComponent;
+    }
+
+    public static Application getMyApplication() {
+        return myApplication;
     }
 
 
