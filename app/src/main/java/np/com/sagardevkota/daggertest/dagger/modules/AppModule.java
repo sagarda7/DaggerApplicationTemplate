@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import javax.inject.Singleton;
 
@@ -50,7 +51,8 @@ public class AppModule {
     @Provides
     @ApplicationScope
     RealmDatabase providesRealmDatabase() {
-        return new RealmDatabase();
+        Log.d("hhhh",mApplication+" is application");
+        return new RealmDatabase(mApplication);
     }
 
 }

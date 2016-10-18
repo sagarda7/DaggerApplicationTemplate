@@ -12,13 +12,11 @@ import np.com.sagardevkota.daggertest.dagger.Injector;
  * Created by Dell on 10/5/2016.
  */
 public class RealmDatabase {
-    @Inject
-    Context mContext;
 
     RealmConfiguration realmConfiguration;
-
-    public RealmDatabase() {
-        Injector.getAppComponent().inject(this);
+    Context mContext;
+    public RealmDatabase(Context context) {
+        this.mContext=context;
     }
 
     public void setup() {

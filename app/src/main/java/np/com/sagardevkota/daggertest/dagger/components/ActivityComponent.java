@@ -19,9 +19,13 @@ import np.com.sagardevkota.daggertest.realm.RealmRepository;
  */
 
 @ActivityScope
-@Component(dependencies = {AppComponent.class}, modules={NetModule.class, ApiModule.class, DatabaseModule.class, RealmModule.class})
+@Component(dependencies = AppComponent.class, modules={NetModule.class, ApiModule.class, DatabaseModule.class, RealmModule.class})
 public interface ActivityComponent {
     void inject(MainActivity activity);
+
+    // Realm repositories tables
     void inject(RealmRepository realmRepository);
+
+    void inject(DatabaseModule databaseModule);
 
 }

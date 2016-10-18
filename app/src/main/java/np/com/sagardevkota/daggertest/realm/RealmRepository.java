@@ -15,10 +15,11 @@ import np.com.sagardevkota.daggertest.models.Repository;
  */
 public class RealmRepository {
 
+    @Inject
     RealmDatabase database;
     Realm realm;
-    public RealmRepository(RealmDatabase database){
-        this.database=database;
+    public RealmRepository(){
+        Injector.getActivityComponent().inject(this);
         this.realm = database.getRealmInstance();
     }
 

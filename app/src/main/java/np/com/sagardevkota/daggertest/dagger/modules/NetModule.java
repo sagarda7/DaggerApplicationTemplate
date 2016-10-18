@@ -3,12 +3,14 @@ package np.com.sagardevkota.daggertest.dagger.modules;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -29,8 +31,9 @@ public class NetModule {
     String mBaseUrl;
     Application mApplication;
 
+
     // Constructor needs one parameter to instantiate.
-    public NetModule(Application application, String baseUrl) {
+    public NetModule(Application application,String baseUrl) {
 
         this.mBaseUrl = baseUrl;
         this.mApplication=application;

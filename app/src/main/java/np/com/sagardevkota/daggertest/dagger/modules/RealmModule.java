@@ -22,7 +22,7 @@ public class RealmModule {
 
     @Provides
     @ActivityScope
-    RealmRepository providesRealmRepository(RealmDatabase database) {
-        return new RealmRepository(database);
+    RealmRepository providesRealmRepository() {
+        return new RealmRepository();
     }
 }

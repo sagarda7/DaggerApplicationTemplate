@@ -22,14 +22,12 @@ import np.com.sagardevkota.daggertest.realm.RealmRepository;
  * Created by HP on 10/3/2016.
  */
 @ApplicationScope
-@Component(modules={AppModule.class})
+@Component(modules=AppModule.class)
 public interface AppComponent {
     Application application();
     SharedPreferences sharedPreferences();
-    Context context();
     RealmDatabase database();
+    Context context();
 
-    void inject(MyApplication application);
-    void inject(RealmDatabase database);
 
 }

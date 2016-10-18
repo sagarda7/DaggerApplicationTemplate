@@ -1,6 +1,7 @@
 package np.com.sagardevkota.daggertest;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.facebook.stetho.Stetho;
 
@@ -28,8 +29,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Injector.initializeApplicationComponent(this);
-        Injector.getAppComponent().inject(this);
         Stetho.initializeWithDefaults(this);
+        Log.d("hhhh",database+" is database");
         database.setup();
     }
 

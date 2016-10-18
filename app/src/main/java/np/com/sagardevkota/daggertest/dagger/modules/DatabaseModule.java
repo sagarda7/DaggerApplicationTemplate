@@ -2,6 +2,7 @@ package np.com.sagardevkota.daggertest.dagger.modules;
 
 import android.content.Context;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -15,11 +16,9 @@ import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 
 @Module
 public class DatabaseModule {
+    @Inject
     Context context;
 
-    public DatabaseModule(Context context){
-        this.context=context;
-    }
 
     @Provides
     @ActivityScope

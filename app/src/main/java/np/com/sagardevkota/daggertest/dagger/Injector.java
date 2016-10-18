@@ -40,9 +40,9 @@ public class Injector {
         mActivityComponent = DaggerActivityComponent.builder()
                 // list of modules that are part of this component need to be created here too
                 .appComponent(mAppComponent)
-                .netModule(new NetModule(application,"https://api.github.com"))
+                .netModule(new NetModule(application, "https://api.github.com"))
                 .apiModule(new ApiModule())
-                .databaseModule(new DatabaseModule(application))
+                .databaseModule(new DatabaseModule())
                 .realmModule(new RealmModule())
                 .build();
     }
