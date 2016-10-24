@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+
+            <item android:drawable="@drawable/login_background_image" />
+
+
+            <item>
+                <shape android:shape="rectangle">
+                    <gradient
+                        android:startColor="#edffffff"
+                        android:endColor="@color/colorPrimary"
+                        android:angle="90"
+                        android:type="linear"
+                        />
+                </shape>
+
+            </item>
+
+
+
+
+        </layer-list>
+    </item>
+
+</selector>

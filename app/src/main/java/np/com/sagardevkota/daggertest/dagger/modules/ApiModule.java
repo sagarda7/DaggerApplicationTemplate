@@ -4,9 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
-import np.com.sagardevkota.daggertest.dagger.scopes.UserScope;
-import np.com.sagardevkota.daggertest.networking.ApiInterface;
+import com.tealbox.app.networking.ApiInterface;
 import retrofit2.Retrofit;
 
 /**
@@ -15,7 +13,7 @@ import retrofit2.Retrofit;
 @Module
 public class ApiModule {
     @Provides
-    @ActivityScope
+    @Singleton
     public ApiInterface providesApiInterface(Retrofit retrofit) {
         return retrofit.create(ApiInterface.class);
     }

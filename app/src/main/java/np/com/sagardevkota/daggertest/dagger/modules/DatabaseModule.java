@@ -2,13 +2,11 @@ package np.com.sagardevkota.daggertest.dagger.modules;
 
 import android.content.Context;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
-import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
-import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
+
+import com.tealbox.app.dagger.scopes.PerActivity;
+import com.tealbox.app.sqllite.DBRepoHelper;
 
 /**
  * Created by Dell on 10/4/2016.
@@ -16,13 +14,12 @@ import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 
 @Module
 public class DatabaseModule {
-    @Inject
-    Context context;
-
+    public DatabaseModule(){
+    }
 
     @Provides
-    @ActivityScope
-    DBRepoHelper providesRepoDB() {
-        return new DBRepoHelper(context);
+    @PerActivity
+    DBRepoHelper providesRepoDB(Context c) {
+        return new DBRepoHelper(c);
     }
 }

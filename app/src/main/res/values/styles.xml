@@ -6,6 +6,56 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSoftInputMode">stateHidden|adjustPan</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MEditText" parent="Base.V7.Widget.AppCompat.EditText"></style>
+
+    <style name="MEditText.WhiteBorder">
+        <item name="android:background">@drawable/edit_border_bottom_line</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:inputType">textPersonName</item>
+
+    </style>
+
+
+
+    <!--Button -->
+    <style name="MButton">
+
+    </style>
+
+    <style name="MButton.White">
+        android:background="@color/colorWhite"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <!--- Line -->
+    <style name="MLine">
+    </style>
+    <style name="MLine.White">
+        <item name="android:background">@drawable/shadow_line</item>
+        <item name="android:height">2.5dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
     </style>
 
 </resources>

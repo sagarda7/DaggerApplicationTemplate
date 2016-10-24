@@ -4,16 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
+
+import com.tealbox.app.realm.RealmDatabase;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import np.com.sagardevkota.daggertest.dagger.scopes.ApplicationScope;
-import np.com.sagardevkota.daggertest.dagger.scopes.UserScope;
-import np.com.sagardevkota.daggertest.realm.RealmDatabase;
-import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 
 /**
  * Created by HP on 10/3/2016.
@@ -28,31 +25,30 @@ public class AppModule {
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     Application providesApplication() {
         return mApplication;
     }
 
     // Dagger will only look for methods annotated with @Provides
     @Provides
-    @ApplicationScope
+    @Singleton
     // Application reference must come from AppModule.class
     SharedPreferences providesSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     public Context applicationContext() {
         return mApplication.getApplicationContext();
     }
 
-    //database instance exists throughout application scope so here
+    //because database is needed in application scope
     @Provides
-    @ApplicationScope
-    RealmDatabase providesRealmDatabase() {
-        Log.d("hhhh",mApplication+" is application");
-        return new RealmDatabase(mApplication);
+    @Singleton
+    RealmDatabase providesRealmDatabase(Context c) {
+        return new RealmDatabase(c);
     }
 
 }

@@ -1,17 +1,11 @@
 package np.com.sagardevkota.daggertest.dagger.modules;
 
-import android.content.Context;
-
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
-import io.realm.Realm;
-import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
-import np.com.sagardevkota.daggertest.dagger.scopes.ApplicationScope;
-import np.com.sagardevkota.daggertest.realm.RealmDatabase;
-import np.com.sagardevkota.daggertest.realm.RealmRepository;
-import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
+
+import com.tealbox.app.dagger.scopes.PerActivity;
+import com.tealbox.app.realm.RealmDatabase;
+import com.tealbox.app.realm.RealmRepository;
 
 /**
  * Created by Dell on 10/4/2016.
@@ -21,8 +15,8 @@ import np.com.sagardevkota.daggertest.sqllite.DBRepoHelper;
 public class RealmModule {
 
     @Provides
-    @ActivityScope
-    RealmRepository providesRealmRepository() {
-        return new RealmRepository();
+    @PerActivity
+    RealmRepository providesRealmRepository(RealmDatabase database) {
+        return new RealmRepository(database);
     }
 }

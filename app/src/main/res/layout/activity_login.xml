@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tealbox.app.np.tealbox.app.ui.login.LoginActivity"
+    android:background="@drawable/login_background_shadow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/tealbox_icon"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/google_icon_24dp"
+            android:text="LOGIN WITH GOOGLE"
+            style="@style/MButton.White"
+            android:id="@+id/btn_act_login_google" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="2.5dp"
+                style="@style/MLine.White"
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Or"
+                android:textAlignment="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                style="@style/MTextView.Small.Bold.White"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="2.5dp"
+                style="@style/MLine.White"
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            style="@style/MEditText.WhiteBorder"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txt_act_login_email"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            style="@style/MEditText.WhiteBorder"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/txt_act_login_password"
+            android:inputType="textPassword"
+            />
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOG IN"
+            style="@style/MButton.White"
+            android:id="@+id/btn_act_login_login"
+            android:layout_marginBottom="20dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MTextView.Medium.Normal.White"
+            android:text="Forgot Your Password"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/txt_act_login_forgot" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not a member yet?"
+                style="@style/MTextView.Medium.Normal.White"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                style="@style/MTextView.Small.Bold.Green"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/txt_act_login_signup" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

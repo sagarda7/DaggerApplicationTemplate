@@ -1,0 +1,382 @@
+<resources>
+    <style name="MTextView">
+    </style>
+
+    <style name="MTextView.Small">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="MTextView.Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MTextView.Large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+
+    <style name="MTextView.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MTextView.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MTextView.Large.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MTextView.Small.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MTextView.Large.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+
+    <!-- COLORS -->
+
+    <!--PRIMARY -->
+    <style name="MTextView.Small.Bold.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!--Accent -->
+    <style name="MTextView.Small.Bold.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+    <!--White -->
+    <style name="MTextView.Small.Bold.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.White">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+
+    <!--Gray -->
+    <style name="MTextView.Small.Bold.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.Gray">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+
+    <!--LightGray -->
+    <style name="MTextView.Small.Bold.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.LightGray">
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+
+
+    <!--Green -->
+    <style name="MTextView.Small.Bold.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Medium.Bold.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Large.Bold.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Bold.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+
+    <style name="MTextView.Small.Normal.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Medium.Normal.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Large.Normal.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Normal.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Small.Italic.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Medium.Italic.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.Large.Italic.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="MTextView.ExtraLarge.Italic.Green">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+
+
+
+
+</resources>

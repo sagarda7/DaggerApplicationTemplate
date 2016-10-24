@@ -1,37 +1,47 @@
 package np.com.sagardevkota.daggertest.dagger.modules;
 
-import android.app.Application;
+import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
-import javax.inject.Singleton;
+import com.tealbox.app.dagger.scopes.PerActivity;
+import com.tealbox.app.ui.views.CustomProgressDialog;
+import com.tealbox.app.utils.formvalidator.FormValidator;
 
 import dagger.Module;
 import dagger.Provides;
-import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
-import np.com.sagardevkota.daggertest.dagger.scopes.ApplicationScope;
-import np.com.sagardevkota.daggertest.realm.RealmDatabase;
 
 /**
- * Created by HP on 10/3/2016.
+ * Created by HP on 10/22/2016.
  */
+
 @Module
 public class ActivityModule {
 
-    Context mContext;
+    private Activity mActivity;
 
-    public ActivityModule(Context context) {
-        mContext = context;
+    public ActivityModule(Activity activity) {
+        mActivity = activity;
     }
-
-
 
     @Provides
-    @ActivityScope
-    public Context activityContext() {
-        return mContext;
+    Activity provideActivity() {
+        return mActivity;
     }
 
+    @Provides
+    Context providesContext() {
+        return mActivity;
+    }
 
+    @Provides
+    @PerActivity
+    FormValidator provideFormValidator(){
+        return new FormValidator();
+    }
+
+    @Provides
+    @PerActivity
+    CustomProgressDialog providesCustomProgressDialog(Context c){
+        return new CustomProgressDialog(c);
+    }
 }

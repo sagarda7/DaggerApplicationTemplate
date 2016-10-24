@@ -1,21 +1,16 @@
 package np.com.sagardevkota.daggertest.dagger.modules;
 
 import android.app.Application;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.util.Log;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import np.com.sagardevkota.daggertest.dagger.scopes.ActivityScope;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -31,9 +26,8 @@ public class NetModule {
     String mBaseUrl;
     Application mApplication;
 
-
     // Constructor needs one parameter to instantiate.
-    public NetModule(Application application,String baseUrl) {
+    public NetModule(Application application, String baseUrl) {
 
         this.mBaseUrl = baseUrl;
         this.mApplication=application;
@@ -41,7 +35,7 @@ public class NetModule {
 
 
     @Provides
-    @ActivityScope
+    @Singleton
     Cache provideOkHttpCache() {
         int cacheSize = 10 * 1024 * 1024; // 10 MiB
         Cache cache = new Cache(mApplication.getCacheDir(), cacheSize);
@@ -49,7 +43,7 @@ public class NetModule {
     }
 
     @Provides
-    @ActivityScope
+    @Singleton
     Gson provideGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
@@ -57,7 +51,7 @@ public class NetModule {
     }
 
     @Provides
-    @ActivityScope
+    @Singleton
     OkHttpClient provideOkHttpClient(Cache cache) {
         OkHttpClient client = new OkHttpClient
                 .Builder().cache(cache)
@@ -68,7 +62,7 @@ public class NetModule {
     }
 
     @Provides
-    @ActivityScope
+    @Singleton
     Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
