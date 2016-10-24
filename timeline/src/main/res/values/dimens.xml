@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="default_internalPadding">2dp</dimen>
-    <dimen name="default_lineWidth">2dp</dimen>
-    <dimen name="default_itemSize">6dp</dimen>
-</resources>
