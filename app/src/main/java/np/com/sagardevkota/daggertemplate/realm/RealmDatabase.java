@@ -34,7 +34,11 @@ public class RealmDatabase {
     }
 
     public Realm getRealmInstance() {
-        return Realm.getDefaultInstance();
+        RealmConfiguration config = new RealmConfiguration
+                .Builder()
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        return Realm.getInstance(config);
     }
 
 
