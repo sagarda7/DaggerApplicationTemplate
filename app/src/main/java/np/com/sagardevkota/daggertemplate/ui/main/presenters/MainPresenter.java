@@ -1,7 +1,6 @@
-package np.com.sagardevkota.daggertemplate.ui.main;
+package np.com.sagardevkota.daggertemplate.ui.main.presenters;
 
 import android.content.Context;
-import android.util.Log;
 
 import np.com.sagardevkota.daggertemplate.models.Repository;
 import np.com.sagardevkota.daggertemplate.networking.ApiInterface;
@@ -12,6 +11,7 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import np.com.sagardevkota.daggertemplate.ui.main.views.MainMvpView;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
 

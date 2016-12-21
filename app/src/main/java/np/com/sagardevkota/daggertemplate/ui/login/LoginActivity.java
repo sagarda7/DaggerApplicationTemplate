@@ -80,7 +80,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
                 .add(ValidationRule.REQUIRED,"Password is required")
                 ).validate();
 
-        if(!valid) return;
+        //if(!valid) return;
         progress.show();
         mPresenter.checkLogin(email.getText().toString(),password.getText().toString());
 

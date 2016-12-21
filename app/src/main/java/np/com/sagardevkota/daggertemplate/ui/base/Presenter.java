@@ -1,6 +1,6 @@
 package np.com.sagardevkota.daggertemplate.ui.base;
 
-import np.com.sagardevkota.daggertemplate.ui.main.MainMvpView;
+import np.com.sagardevkota.daggertemplate.ui.main.views.MainMvpView;
 
 import javax.inject.Inject;
 

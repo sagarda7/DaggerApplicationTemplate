@@ -1,4 +1,4 @@
-package np.com.sagardevkota.daggertemplate.ui.main;
+package np.com.sagardevkota.daggertemplate.ui.main.views;
 
 import np.com.sagardevkota.daggertemplate.ui.base.MvpView;
 

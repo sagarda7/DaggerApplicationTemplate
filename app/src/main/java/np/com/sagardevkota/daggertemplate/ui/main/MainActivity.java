@@ -3,6 +3,7 @@ package np.com.sagardevkota.daggertemplate.ui.main;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import com.tealbox.app.R;
 
 import np.com.sagardevkota.daggertemplate.ui.base.BaseActivity;
+import np.com.sagardevkota.daggertemplate.ui.main.fragments.HomeFragment;
+import np.com.sagardevkota.daggertemplate.ui.main.presenters.MainPresenter;
+import np.com.sagardevkota.daggertemplate.ui.main.views.MainMvpView;
 
 import javax.inject.Inject;
 
@@ -27,7 +31,10 @@ public class MainActivity extends BaseActivity implements MainMvpView, Navigatio
     @Inject
     MainPresenter mMainPresenter;
 
-    TextView txtName;
+    @Inject
+    HomeFragment homeFragment;
+
+    //TextView txtName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, Navigatio
         setSupportActionBar(toolbar);
         getActivityComponent().inject(this);
 
-        txtName = (TextView) findViewById(R.id.txt_act_main_name);
+        //txtName = (TextView) findViewById(R.id.txt_act_main_name);
         mMainPresenter.attachView(this);
         mMainPresenter.loadData(this);
 
@@ -58,6 +65,8 @@ public class MainActivity extends BaseActivity implements MainMvpView, Navigatio
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        setFragment(homeFragment);
 
     }
 
@@ -129,11 +138,18 @@ public class MainActivity extends BaseActivity implements MainMvpView, Navigatio
 
     @Override
     public void showName(String name) {
-        txtName.setText(name);
+       // txtName.setText(name);
     }
 
     @Override
     public void showGithubNames(String name) {
         Log.d("names", name);
+    }
+
+    void setFragment(Fragment fragment){
+
+        // Add the fragment to the 'fragment_container' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment).commit();
     }
 }

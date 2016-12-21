@@ -7,13 +7,17 @@ import np.com.sagardevkota.daggertemplate.dagger.components.ActivityComponent;
 import np.com.sagardevkota.daggertemplate.dagger.components.AppComponent;
 import np.com.sagardevkota.daggertemplate.dagger.components.DaggerActivityComponent;
 import np.com.sagardevkota.daggertemplate.dagger.components.DaggerAppComponent;
+import np.com.sagardevkota.daggertemplate.dagger.components.DaggerFragmentComponent;
+import np.com.sagardevkota.daggertemplate.dagger.components.FragmentComponent;
 import np.com.sagardevkota.daggertemplate.dagger.modules.ActivityModule;
 import np.com.sagardevkota.daggertemplate.dagger.modules.ApiModule;
 import np.com.sagardevkota.daggertemplate.dagger.modules.AppModule;
 import np.com.sagardevkota.daggertemplate.dagger.modules.DatabaseModule;
+import np.com.sagardevkota.daggertemplate.dagger.modules.FragmentModule;
 import np.com.sagardevkota.daggertemplate.dagger.modules.NetModule;
 import np.com.sagardevkota.daggertemplate.dagger.modules.RealmModule;
 import np.com.sagardevkota.daggertemplate.ui.base.BaseActivity;
+import np.com.sagardevkota.daggertemplate.ui.base.BaseFragment;
 
 /**
  * Created by Dell on 10/5/2016.
@@ -22,6 +26,7 @@ public class Injector {
 
     private static AppComponent mAppComponent;
     private static ActivityComponent mActivityComponent;
+    private static FragmentComponent mFragmentComponent;
 
     private Injector() {}
 
@@ -50,6 +55,18 @@ public class Injector {
 
     public static ActivityComponent getActivityComponent() {
         return mActivityComponent;
+    }
+
+    public static void initialiseFragmentComponent(BaseFragment fragment) {
+        mFragmentComponent = DaggerFragmentComponent.builder()
+                .appComponent(getAppComponent())
+                // list of modules that are part of this component need to be created here too
+                .fragmentModule(new FragmentModule(fragment))
+                .build();
+    }
+
+    public static FragmentComponent getFragmentComponent() {
+        return mFragmentComponent;
     }
 
 

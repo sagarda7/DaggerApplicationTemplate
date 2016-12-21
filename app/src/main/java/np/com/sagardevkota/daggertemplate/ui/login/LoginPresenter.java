@@ -31,12 +31,14 @@ public class LoginPresenter extends BasePresenter<LoginMvpView> {
 
     public void checkLogin(String username, String password){
        // make network call or get dtat from model with then if success fire view callback
-        if(username.equals("sagar") && password.equals("test")){
+        getMvpView().onLoginSuccess();
+       /* if(username.equals("sagar@yahoo.com") && password.equals("test")){
             getMvpView().onLoginSuccess();
         }
         else {
             getMvpView().onLoginError();
-        }
+        }*/
+
     }
 
 
